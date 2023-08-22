@@ -1,0 +1,90 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <script defer src="page3.js"></script>
+    <title>Sing in</title>
+</head>
+
+<body>
+    <div class="form_container">
+        <a href="{% url 'home' %}" class="back_button"><img src="/static/assets/images/Arrows_button.svg" alt="Back button"></a>
+
+        <div class="signin-form">
+            <div class="signin-form_p">
+                <h1 class="signin-form_h1">Создайте профиль</h1>
+                <form id="form" class="signin-form_profile" method="post">
+                    {% csrf_token %}
+                    
+                    <div class="input-control input-control_wrp">
+                        <input id="id_email" class="input_style" type="email" name="email" autocomplete="email" required="">
+                        <span class="floating-label">E-mail</span>
+                        <div class="error" id="error_m">{{ form.email.errors }}</div>
+                    </div>
+                    <div class="input-control input-control_wrp">
+                        <input id="id_password1" class="input_style" type="password" name="password1" autocomplete="new-password" required>
+                        <span class="floating-label">Пароль</span>
+                        <div class="error" id="error_m">{{ form.password1.errors }}</div>
+                    </div>
+                    <div class="input-control input-control_wrp">
+                        <input id="id_password2" class="input_style" type="password" name="password2" autocomplete="new-password" required>
+                        <span class="floating-label">Пароль (повторить)</span>
+                        <div class="error" id="error_m">
+                            {% for error in form.password2.errors %}
+                            {{error}}
+                            {% endfor %}
+                        </div> 
+                    </div>
+                    <div class="error" id="error_m">
+                        {% for error in form.non_field_errors %}
+                        {{error}}
+                        {% endfor %}
+                    </div>                    
+                    {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
+                    <button type="submit" class="b1">Продолжить</button>
+                </form>
+
+            </div>
+        </div>
+
+        <div class="signin-form">
+            <div class="signin-form_social">
+                <h1 class="signin-form_h1">Создайте профиль с помощью</h1>
+                <a href="/accounts/google/login/?process=login">
+                    <button class="login-form_social_googlebutton">Google</button>
+                </a>
+                <a href="/accounts/yandex/login/?process=login">
+                    <button class="login-form_social_fbbutton">Вконтакте</button>
+                </a>
+                <a href="/accounts/vk/login/?process=login">
+                    <button class="login-form_social_applebutton">Яндекс</button>
+                </a>
+                <a href="{% url 'account_login' %}"><h2>У Вас уже есть профиль на сайте?</h2></a>
+            </div>
+        </div>
+
+        <div class="form-middle">
+            <div class="form-middle_line1"></div>
+            <p id="form-middle_text">Или</p>
+            <div class="form-middle_line2"></div>
+        </div>
+
+    </div>
+         
+</body>
+</html>
+
+{% endblock %}

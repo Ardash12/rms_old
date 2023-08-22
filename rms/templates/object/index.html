@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <title>Вход на сайт системы управления ресурсами</title>
+</head>
+
+<body>
+    <div class="form_container">
+        <div class="gray"></div>
+        <div class="authorization-form">
+            <div class="authorization-form_login">
+                <h1 class="authorization-form_h1">Добро пожаловать в Систему <br>
+                управления ресурсами</h1>
+                <h2>У Вас уже есть профиль?</h2>
+                <a href="{% url 'account_login' %}"><button>Войти</button></a>
+                <h2>Еще не зарегистрированы?</h2>
+                <a href="{% url 'account_signup' %}"><button class="button_two">Зарегистрироваться</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

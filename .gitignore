@@ -1,0 +1,15 @@
+.idea/
+venv/
+env/
+**/media/*
+**/static/admin/*
+**/static/django_mptt_admin/*
+**/static/mptt/*
+**/static/rest_framework/*
+# !rms/static/assets/*
+# !rms/static/vendor/*
+**/__pycache__/
+**/migrations/*
+!obj_card/migrations/__init__.py
+db.sqlite3
+.env

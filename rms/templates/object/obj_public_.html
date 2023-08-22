@@ -1,0 +1,41 @@
+{% extends "object/default.html" %} 
+
+{% block title %}
+    {{ post.name }}
+{% endblock %}
+
+{% block content %}
+
+<style>
+	table{
+	  margin: 50px 0px;
+	  text-align: left;
+	  border: 1px solid rgb(0, 0, 0);
+	  width: 100%;
+	  border-collapse: collapse;
+	}
+	td,th{
+    border: 1px solid rgb(0, 0, 0);
+    padding: 5px;
+    vertical-align: top;
+  }
+</style>
+
+<table>
+    <tr>
+        <td>
+            <p>Название: {{ obj.name }}</p>
+            <p>Описание:  {{ obj.description }}</p>
+            <p>Категория:  {{ obj.category }}</p>
+        </td>
+        <td>
+
+        {% for photo in photos %}
+            <div>
+                <img src="{{ photo.image.url }}" width="300px">
+            </div>
+        {% endfor %}
+        </td>
+    </tr>
+</table>
+{% endblock %}

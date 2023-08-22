@@ -1,0 +1,10 @@
+{% extends "object/default.html" %} 
+
+{% block content %}
+    <h1>Редактировать место хранения</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Сохранить" />
+    </form>
+{% endblock content %}

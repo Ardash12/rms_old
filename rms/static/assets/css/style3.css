@@ -1,0 +1,1334 @@
+body {
+  position: relative;
+  width: 1440px;
+  height: 1024px;
+
+  background: #FFFFFF;
+}
+
+.header-newCard {
+  width: 1440px;
+  height: 150px;
+  left: 0px;
+  top: 0px;
+  background: #F0F0F0 ;
+
+}
+
+
+.header-newCard_div {
+  width: 1440px;
+  height: 150px;
+
+}
+
+.arrows-button {
+  position: absolute;
+  left: 93px;
+  top: 70.94px;
+}
+
+.arrows-button:hover {
+  position: absolute;
+  background-color: #FAFAFA;
+  border-radius: 20px;
+}
+
+
+.close-button {
+  position: absolute;
+  left: 1321px;
+  top: 70.94px;
+}
+
+.close-button:hover {
+  position: absolute;
+  background-color: #FAFAFA;
+  border-radius: 20px;
+}
+
+
+
+
+
+.header-newCard h1 {
+  position: absolute;
+  left: 150px;
+  top: 65.94px;
+
+
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+
+
+  color: #000000;
+}
+
+.container-card__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+  /* identical to box height, or 27px */
+
+  color: #000000;
+
+}
+
+
+.container-card__list-item5 {
+position: absolute;
+width: 850px;
+height: 150px;
+left: 65px;
+top: 265px;
+display: flex;
+flex-direction: row;
+gap: 40px;
+}
+
+
+
+
+
+
+
+
+.container-card__list-item4 {
+position: absolute;
+width: 385px;
+height: 30px;
+left: 65px;
+top: 185px;
+
+/* Main text */
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 150%;
+/* or 27px */
+
+/* Black */
+color: #000000;
+
+display: flex;
+flex-direction: row;
+}
+
+
+
+
+
+
+
+
+.container-card__list-item1 {
+  position: absolute;
+  /*width: 160px;*/
+  height: 27px;
+  left: 65px;
+  top: 515px;
+  display: flex;
+  flex-direction: row;
+  gap: 150px;
+}
+
+.container-card__list-item2 {
+  position: absolute;
+  /*width: 370px;*/
+  height: 27px;
+  left: 65px;
+  top: 622px;
+  display: flex;
+  flex-direction: row;
+  gap: 90px;
+}
+
+.container-card__list-item3 {
+  position: absolute;
+  /*width: 160px;*/
+  height: 27px;
+  left: 65px;
+  top: 742px;
+  display: flex;
+  flex-direction: row;
+  gap: 145px;
+}
+
+h3 {
+margin-top: 0px;
+}
+
+/* modal shering window page 4 */
+
+
+.modal-shering {
+position: fixed;
+inset: 0;
+visibility: hidden;
+margin: auto;
+
+background-color: rgba(0, 0, 0, 0.5);
+z-index: 1;
+
+
+}
+
+
+.modal-shering--hidden {
+visibility: hidden;
+}
+
+.modal-shering--visible {
+visibility: visible;
+
+}
+
+
+
+.modal_main-shering {
+position: relative;
+
+width: 625px;
+height: 142px;
+margin: auto;
+color: #000000;
+
+background: #FFFFFF;
+
+
+
+}
+
+
+
+
+
+
+
+
+.shering_input {
+position: absolute;
+top: 40px;
+left: 40px;
+width: 500px;
+height: 60px;
+padding-left: 20px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 150%;
+/* identical to box height, or 27px */
+
+/* Dark Grey */
+color: black;
+
+box-sizing: border-box;
+border: 1px solid #8D8D8D;
+border-radius: 10px;
+}
+
+
+.shering-frame {
+position: absolute;
+width: 32px;
+height: 32px;
+left: 550px;
+top: 55px;
+cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main__container-button {
+  padding: 20px;
+  gap: 10px;
+
+  position: absolute;
+  width: 320px;
+  height: 60px;
+  left: 65px;
+  top: 876px;
+
+  /* Grey */
+  background: #F0F0F0;
+  border-radius: 10px;
+  border: 0;
+  font-family: 'Inter';
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  /* identical to box height, or 27px */
+
+  /* Black */
+  color: #000000;
+
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+
+.main__container-button1 {
+
+
+  position: absolute;
+  width: 320px;
+  height: 60px;
+  left: 415px;
+  top: 876px;
+
+  /* White */
+  background: #FFFFFF;
+  /* Dark Grey */
+  border: 1px solid #8D8D8D;
+  border-radius: 10px;
+
+      /* Main text */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  /* identical to box height, or 27px */
+
+  /* Black */
+  color: #000000;
+}
+
+
+.main__container-button2 {
+position: absolute;
+width: 320px;
+height: 60px;
+left: 765px;
+top: 876px;
+
+/* White */
+background: #FFFFFF;
+/* Dark Grey */
+border: 1px solid #8D8D8D;
+border-radius: 10px;
+
+/* Main text */
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 150%;
+/* identical to box height, or 27px */
+
+/* Black */
+color: #000000;
+
+
+
+}
+
+
+.main__container-button2:hover {
+  border: 1px solid #000000;
+  border-radius: 10px;
+}
+
+.main__container-button1:hover {
+  border: 1px solid #000000;
+  border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.main__container-button:hover {
+  background: #F0F0F0;
+  border: 1px solid #000000;
+  border-radius: 10px;
+}
+
+.main__container-button:active {
+  background: #8D8D8D;
+  border-radius: 10px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+  /* identical to box height, or 27px */
+
+  /* White */
+  color: #FFFFFF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.main__container-button-enter {
+  padding: 22px 30px 24px;
+  gap: 10px;
+
+  position: absolute;
+  width: 107px;
+  height: 60px;
+  left: 611px;
+  top: 875px;
+  background: white;
+
+  /* Dark Grey */
+  border: 1px solid #8D8D8D;
+  border-radius: 10px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  /* identical to box height, or 24px */
+
+  color: #000000;
+
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__container-button-enter:hover {
+  border: 1px solid #000000;
+  border-radius: 10px;
+  }
+
+
+.header-newCard_div_h1 {
+  position: absolute;
+
+  right: 80px;
+  top: 65.94px;
+}
+
+
+/* modal window delete page 8 */
+
+
+
+.modal-delete {
+position: fixed;
+inset: 0;
+visibility: hidden;
+
+
+background-color: rgba(0, 0, 0, 0.5);
+z-index: 1;
+
+}
+
+.modal_main-delete {
+position: relative;
+margin: auto;
+width: 720px;
+height: 289px;
+margin: auto;
+color: #000000;
+
+background: #FFFFFF;
+
+
+}
+
+.modal_title-delete {
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 150%;
+
+
+color: #000000;
+position: absolute;
+left: 80px;
+top: 80px;
+}
+
+
+
+
+
+.modal-delete_button2 {
+position: absolute;
+width: 90px;
+height: 60px;
+left: 547px;
+top: 169px;
+
+border: none;
+
+
+
+background: #F0F0F0;
+border-radius: 10px;
+cursor: pointer;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+
+
+color: #000000;
+
+}
+
+.modal-delete_button1 {
+
+position: absolute;
+width: 82px;
+height: 60px;
+left: 417px;
+top: 169px;
+
+border: none;
+background: white;
+
+box-sizing: border-box;
+border: 1px solid #8D8D8D;
+border-radius: 10px;
+cursor: pointer;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+
+
+color: #000000;
+}
+
+
+
+.modal-delete_button1:hover {
+border: 1px solid #000000;
+border-radius: 10px;
+}
+
+.modal-delete_button2:hover {
+border: 1px solid #000000;
+border-radius: 10px;
+}
+
+
+.modal-delete_button2:active{
+background: #8D8D8D;
+border-radius: 10px;
+color: #FFFFFF;
+}
+
+
+
+
+
+
+
+/*@media only screen and (max-width: 767px) {
+  body {
+    width: 100%;
+    height: auto;
+  }
+
+  .header-newCard {
+    width: 100%;
+    height: 100px;
+  }
+
+  .header-newCard_div_h1 {
+    position: static;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .arrows-button {
+    display: none;
+  }
+
+  .close-button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .header-newCard h1 {
+    position: static;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .container-card__list-item1,
+  .container-card__list-item2,
+  .container-card__list-item3 {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+
+
+  /*.main__container-button {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+  }
+
+  .main__container-button-enter {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+  }
+}
+*/
+
+
+
+
+
+.icon1, .icon2, .icon3, .icon4, .icon5  {
+  width: 150px;
+  height: 150px;
+  border: 1px solid #8D8D8D;
+  border-radius: 10px;
+  box-sizing: border-box;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.google_img {
+  position: absolute;
+  left: 610px;
+  top: 390px;
+}
+
+.google-h2 {
+  position: absolute;
+  top: 471px;
+  left: 470px;
+
+
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 150%;
+  /* or 39px */
+
+  color: #000000;
+}
+
+
+
+.google-button {
+  position: absolute;
+  top: 595px;
+  left: 470px;
+  border: none;
+  width: 500px;
+  height: 60px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  /* identical to box height, or 27px */
+
+  /* Black */
+  color: #000000;
+
+
+  background: #F0F0F0;
+  border-radius: 10px;
+
+  padding: 20px;
+  gap: 10px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-button:hover {
+  background: #F0F0F0;
+  border: 1px solid #000000;
+  border-radius: 10px;
+}
+
+.google-button:active {
+  background: #8D8D8D;
+  border-radius: 10px;
+  color: #FFFFFF;
+}
+
+
+
+
+
+
+
+.yandex_img {
+  position: absolute;
+  left: 470px;
+  top: 390px;
+}
+
+.yandex-h2 {
+  position: absolute;
+  top: 470px;
+  left: 470px;
+
+
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 150%;
+  /* or 39px */
+
+  color: #000000;
+}
+
+
+
+.yandex-button {
+  position: absolute;
+  top: 595px;
+  left: 470px;
+  border: none;
+  width: 500px;
+  height: 60px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+
+  /* identical to box height, or 27px */
+
+  /* Black */
+  color: #000000;
+
+
+  background: #F0F0F0;
+  border-radius: 10px;
+
+  padding: 20px;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.yandex-button:hover {
+  background: #F0F0F0;
+  border: 1px solid #000000;
+  border-radius: 10px;
+}
+
+.yandex-button:active {
+  background: #8D8D8D;
+  border-radius: 10px;
+  color: #FFFFFF;
+}
+
+
+
+
+
+.vkontakte_img {
+  position: absolute;
+  left: 605px;
+  top: 415px;
+}
+
+.vkontakte-h2 {
+  position: absolute;
+  top: 470px;
+  left: 470px;
+
+
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 150%;
+  /* or 39px */
+
+  color: #000000;
+}
+
+
+
+.vkontakte-button {
+  position: absolute;
+  top: 595px;
+  left: 470px;
+  border: none;
+  width: 500px;
+  height: 60px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  /* identical to box height, or 27px */
+
+  /* Black */
+  color: #000000;
+
+
+  background: #F0F0F0;
+  border-radius: 10px;
+
+  padding: 20px;
+  gap: 10px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vkontakte-button:hover {
+  background: #F0F0F0;
+  border: 1px solid #000000;
+  border-radius: 10px;
+}
+
+.vkontakte-button:active {
+  background: #8D8D8D;
+  border-radius: 10px;
+  color: #FFFFFF;
+}
+
+
+.gray {
+  position: absolute;
+  width: 720px;
+  height: 1024px;
+  left: 0px;
+  top: 0px;
+
+  background: #D9D9D9;
+}
+
+
+
+.exit-container_h1 {
+  position: absolute;
+  top: 365px;
+  left: 820px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 150%;
+  /* identical to box height, or 39px */
+
+  color: #000000;
+}
+
+.exit-container_h2 {
+  position: absolute;
+  width: 300px;
+  height: 50px;
+  left: 820px;
+  top: 424px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  /* identical to box height, or 27px */
+
+  color: #000000;
+
+
+}
+
+.button_exit1 {
+  position: absolute;
+  width: 82px;
+  height: 60px;
+  left: 1042px;
+  top: 491px;
+
+  /* Dark Grey */
+  border: 1px solid #8D8D8D;
+  border-radius: 10px;
+  background: white;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  /* identical to box height, or 24px */
+
+  color: #000000;
+  cursor: pointer;
+}
+
+.button_exit1:hover {
+border: 1px solid #000000;
+border-radius: 10px;
+}
+
+.button_exit2 {
+  position: absolute;
+  width: 82px;
+  height: 60px;
+  left: 1154px;
+  top: 492px;
+
+  /* Grey */
+  background: #F0F0F0;
+  border-radius: 10px;
+  border: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  /* identical to box height, or 24px */
+
+  color: #000000;
+  cursor: pointer;
+}
+
+
+.button_exit2:hover {
+background: #F0F0F0;
+/* Black */
+border: 1px solid #000000;
+border-radius: 10px;
+}
+
+.button_exit2:active {
+background: #8D8D8D;
+border-radius: 5px;
+color: #FFFFFF;
+}
+
+
+.modal-delete {
+position: fixed;
+inset: 0;
+visibility: hidden;
+
+
+background-color: rgba(0, 0, 0, 0.5);
+z-index: 1;
+
+}
+
+.modal_main-delete {
+position: relative;
+margin: auto;
+width: 720px;
+height: 289px;
+margin: auto;
+color: #000000;
+
+background: #FFFFFF;
+
+
+}
+
+.modal_title-delete {
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 150%;
+
+
+color: #000000;
+position: absolute;
+left: 80px;
+top: 80px;
+}
+
+
+
+
+
+.modal-delete_button2 {
+position: absolute;
+width: 90px;
+height: 60px;
+left: 547px;
+top: 169px;
+
+border: none;
+
+background: #F0F0F0;
+border-radius: 10px;
+cursor: pointer;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+
+
+color: #000000;
+
+}
+
+.modal-delete_button1 {
+
+position: absolute;
+width: 82px;
+height: 60px;
+left: 417px;
+top: 169px;
+
+border: none;
+background: white;
+
+box-sizing: border-box;
+border: 1px solid #8D8D8D;
+border-radius: 10px;
+cursor: pointer;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+
+
+color: #000000;
+}
+
+.modal-delete_button1:hover {
+border: 1px solid #000000;
+border-radius: 10px;
+}
+
+.modal-delete_button2:hover {
+border: 1px solid #000000;
+border-radius: 10px;
+}
+
+
+.modal-delete_button2:active{
+background: #8D8D8D;
+border-radius: 10px;
+color: #FFFFFF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 760px) {
+
+  .google_img {
+
+    width: 220px;
+    height: 74px;
+    position: absolute;
+    top: 258px;
+    left: 70px;
+  }
+
+  .google-h2 {
+    position: absolute;
+    top: 340px;
+    left: 20px;
+    width: 320px;
+    height: 60px;
+    font-size: 18px;
+  }
+
+
+  .google-button {
+    position: absolute;
+    width: 320px;
+    height: 60px;
+    left: 20px;
+    top: 442px;
+  }
+
+
+
+  .yandex_img {
+    width: 300px;
+    height: 50px;
+
+    position: absolute;
+    top: 258px;
+    left: 15px;
+  }
+
+  .yandex-h2 {
+    position: absolute;
+    top: 315px;
+    left: 20px;
+    width: 320px;
+    height: 60px;
+    font-size: 18px;
+  }
+
+
+  .yandex-button {
+    position: absolute;
+    width: 320px;
+    height: 60px;
+    left: 20px;
+    top: 442px;
+  }
+
+
+  .vkontakte_img {
+
+    width: 230px;
+    height: 40px;
+
+
+    position: absolute;
+    top: 260px;
+    left: 50px;
+  }
+
+  .vkontakte-h2 {
+    position: absolute;
+    top: 315px;
+    left: 20px;
+    width: 320px;
+    height: 60px;
+    font-size: 18px;
+  }
+
+
+  .vkontakte-button {
+    position: absolute;
+    width: 320px;
+    height: 60px;
+    left: 20px;
+    top: 442px;
+  }
+
+
+
+  .arrows-button {
+    top: 5px;
+    left: 20px;
+
+  }
+  .header-newCard {
+    background: white;
+  }
+
+  .header-newCard_div {
+    background: white;
+    width: 350px;
+  }
+
+  .header-newCard h1 {
+    top:-10px;
+    left: 50px;
+    width: 250px;
+    position: absolute;
+    font-size: 26px;
+  }
+
+  .container-card__list-item4 {
+    top: 70px;
+    left: 30px;
+
+  }
+
+  .container-card__list-item5 {
+
+    top: 150px;
+    left: 30px;
+    gap: 10px;
+
+  }
+
+  .icon1, .icon2, .icon3, .icon4, .icon5 {
+    width: 100px;
+    height: 100px;
+
+  }
+
+  .container-card__list-item1 {
+    left: 30px;
+    top: 300px;
+  }
+
+  .container-card__list-item2 {
+    left: 30px;
+    top: 400px;
+  }
+
+  .container-card__list-item3 {
+    left: 30px;
+    top: 500px;
+  }
+
+
+
+  .main__container-button {
+    left: 20px;
+    top: 700px;
+  }
+
+  .main__container-button1 {
+    left: 20px;
+    top: 800px;
+  }
+
+  .main__container-button2 {
+    left: 20px;
+    top: 900px;
+  }
+
+
+
+
+
+
+  .gray {
+    display: none;
+  }
+
+  .exit-container_h1 {
+    top: -10px;
+    left: 20px;
+    width: 300px;
+  }
+
+ .exit-container_h2 {
+    left: 20px;
+    top: 136px;
+ }
+
+ .button_exit1 {
+  left: 30px;
+  top: 214px;
+ }
+
+ .button_exit2 {
+  left: 277px;
+  top: 214px;
+ }
+
+ .modal_main-delete {
+     left:-450px;
+     top:-250px;
+     width:400px;
+ }
+
+ .modal-delete_button1 {
+     left:200px;
+
+ }
+
+  .modal-delete_button2 {
+     left:300px;
+
+ }
+
+  .modal_main-shering {
+    left: -400px;
+    top: -300px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

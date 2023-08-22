@@ -1,0 +1,14 @@
+<html>
+{% block content %}
+    <h3>New Pic</h3>
+    <div class="post">
+        <h4>Название:  {{ post.name }}</h4>
+        <p>Описание :  {{ post.description }}</p>
+    </div>
+    <form method="POST" enctype="multipart/form-data" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+
+{% endblock %}
+</html>

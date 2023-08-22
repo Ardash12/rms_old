@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/assets/css/style2.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Список вещей</title>
+</head>
+<body>
+    <header>  
+        <a href="{% url 'obj_add' %}"><button class="header-button">+ Добавить вещь</button></a>
+
+        <div class="search-form"> 
+			<form method="GET" >
+				<input type="text" name="q" class="search-txt" placeholder="Поиск">
+				<img class="search-form_img" src="/static/assets/images/Search.svg" alt="image">
+			</form>
+        </div>
+        <div class="exit">
+            <a class="nav-link" href="{% url 'account_logout' %}"><button class="exit-button">Выход</button></a>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-div">Вещи в базе</div>
+        <form method="GET">
+            <div class="form-group">
+                <div class="select-wrapper">
+                    <select class="dropdown__button" name="storage">
+                        {% for storage in filter.storage %}
+                            {{storage}}
+                        {% endfor %}
+                    </select>
+                </div>  
+            </div>
+    
+            <div class="form-group-two">
+                <div class="select-wrapper-two">
+                    <select class="dropdown__button-two" name="category">
+                        {% for cat in filter.category %}
+                            {{cat}}
+                        {% endfor %}
+                    </select>
+                </div>  
+            </div>
+            <button class="main-div_button">Применить</button>
+        </form>
+        {% if object_list %}
+        <div class="section-cart__body">
+            <table class="first">
+                <tr>
+                    <th>Наименование</th>
+                    <th>Место хранения</th>
+                    <th>Категория</th>
+                    <th>Дата добавления</th> 
+                </tr>
+                {% for thing in object_list %}
+                <tr>
+                    <td>
+                        <a href="{% url 'obj_detail' thing.id %}">
+                            {{thing.name}}
+                        </a>
+                    </td>
+                    <td>{{thing.storage}}</td>
+                    <td>{{thing.category}}</td>
+                    <td>{{thing.created|date:'d M Y'}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            </div>
+        
+		{% else %}
+		<h2 class="table_h2">У вас нет вещей</h2>
+		{% endif %}
+        
+
+    </main>
+    <script src="/static/assets/js/main.js"></script>
+</body>
+</html>

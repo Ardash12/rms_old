@@ -1,0 +1,41 @@
+{% extends "socialaccount/base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/assets/css/style3.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <title>Document</title>
+</head>
+<body>
+
+    <main>
+        <div>
+          {% if provider.name == "VK" %}
+            <img class="vkontakte_img" src="/static/assets/images/vkontakte_logo.svg" alt="vkontakte">
+            <h2 class="vkontakte-h2"> Для продолжения вы будете <br> перенаправлены в аккаунт Вконтакте </h2>
+          {% elif provider.name == "Yandex" %}
+            <img class="yandex_img" src="/static/assets/images/yandex_logo.svg" alt="yandex">
+            <h2 class="yandex-h2"> Для продолжения вы будете <br> перенаправлены в аккаунт  Яндекс.Почты </h2>
+          {% elif provider.name == "Google" %}
+            <img class="google_img" src="/static/assets/images/google_logo.svg" alt="google">
+            <h2 class="google-h2">Для продолжения вы будете <br> перенаправлены в аккаунт Google </h2>
+          {% endif %}
+            <form method="post">
+              {% csrf_token %}
+              <button class="vkontakte-button">Перейти сейчас</button>
+            </form>
+        </div>
+    </main>
+    
+</body>
+</html>
+{% endblock %}

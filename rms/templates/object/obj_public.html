@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/assets/css/style3.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <title>Card</title>
+</head>
+<body>
+    <header class="header-newCard">
+        <div class="header-newCard_div">
+
+          <h1 class="header-newCard_div_h1">Карточка вещи</h1>
+        <img class="close-button" src="/static/assets/images/Close_button.svg" alt="">
+        </div>
+      </header>
+
+
+    <main>
+      <div class="main__container">
+        <div class="container-card">
+          <ul class="container-card__list">
+            <li class="container-card__list-item4"><h3>{{obj.name}}</h3> </li>
+            <li class="container-card__list-item5">
+              {% for photo in photos %}
+              <h3 class="icon1">
+                <img src="{{ photo.image.url }}" width="148px" alt="">
+              </h3>
+              {% endfor %}
+
+          </li>
+
+            <li class="container-card__list-item1">Категория <h3>{{obj.category}}</h3> </li>
+            <li class="container-card__list-item2">Место хранения<h3>{{obj.storage}}</h3> </li>
+            <li class="container-card__list-item3">Описание <h3>{{obj.description}}</h3> </li>
+          </ul>
+        </div>
+        {% if not request.user.is_authenticated %}
+            <a href="{% url 'account_signup' %}"><button class="main__container-button">Зарегистрироваться</button></a>
+            <a href="{% url 'account_login' %}"><button class="main__container-button-enter">Войти</button></a>
+        {% endif %}
+          </div>
+    </main>
+    
+</body>
+</html>

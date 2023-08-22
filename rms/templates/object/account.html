@@ -1,0 +1,22 @@
+{% extends "object/default.html" %}
+
+{% block title %}
+  {{title}}
+{% endblock %}
+
+{% block content %}
+
+
+<a href="{% url 'account_change_password' %}">Сменить пароль</a><br>
+<a href="{% url 'account_reset_password' %}">Сбросить пароль на почту</a><br>
+<a href="{% url 'account_email' %}">Добавить адрес электронной почты</a><br>
+<a href="{% url 'account_email_verification_sent' %}">Страница с просьбой подтвердить email</a><br>
+<a href="{% url 'account_login' %}">Страница входа</a><br>
+<a href="{% url 'account_logout' %}">Страница выхода</a><br>
+
+
+
+
+
+
+{% endblock %}

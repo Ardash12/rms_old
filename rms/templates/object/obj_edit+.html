@@ -1,0 +1,47 @@
+{% extends "object/default.html" %} 
+
+{% block title %}
+    Редактирование вещи
+{% endblock title %}
+
+{% block content %}
+    <form method="POST" enctype="multipart/form-data" class="post-form">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        {{ form.name_of_field.errors }} 
+        {{ field.errors }}
+        <div class="fieldWrapper">
+            {{ form.name.errors }}
+            <label for="{{ form.name.id_for_label }}">Название:</label>
+            {{ form.name }}
+        </div>
+        <div class="fieldWrapper">
+            {{ form.description.errors }}
+            <label for="{{ form.description.id_for_label }}">Описание:</label>
+            {{ form.description }}
+        </div>
+        <div class="fieldWrapper">
+            {{ form.storage.errors }}
+            <label for="{{ form.storage.id_for_label }}">Место:</label>
+            {{ form.storage }}
+        </div>
+        <div class="fieldWrapper">
+            {{ form.category.errors }}
+            <label for="{{ form.category.id_for_label }}">Категория:</label>
+            {{ form.category }}
+        </div>
+        <div>
+          {% for photo in photos %}
+            <img src="{{ photo.image.url }}" width="300px">
+            <a href="{% url  'photo_delete' photo.id %}">Удалить фото</a>
+            <br>
+          {% endfor %}
+        </div>  
+        <div class="fieldWrapper">
+            {{ form.photos.errors }}
+            <label for="{{ form.photos.id_for_label }}">Фотография:</label>
+            {{form.photos}}
+        </div>
+        <button type="submit">Сохранить</button>
+    </form>
+{% endblock %}

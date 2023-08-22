@@ -1,0 +1,64 @@
+{% extends "object/default.html" %} 
+{% load mptt_tags %}
+
+{% block title %}
+    {{ post.name }}
+{% endblock %}
+
+{% block content %}
+
+<style>
+	table{
+	  margin: 50px 0px;
+	  text-align: left;
+	  border: 1px solid rgb(0, 0, 0);
+	  width: 100%;
+	  border-collapse: collapse;
+	}
+	td,th{
+    border: 1px solid rgb(0, 0, 0);
+    padding: 5px;
+    vertical-align: top;
+  }
+</style>
+
+{% recursetree obj_path %}
+    <a href="{% url 'category_obj' node.id %}">{{node.name}}</a>
+    {% if not node.is_leaf_node %}
+        / {{ children }}
+    {% endif %}
+{% endrecursetree %}
+<br>
+<input type="button" onclick="history.back();" value="Назад"/>
+<table>
+    <tr>
+        <td>
+            <p>Название: {{ obj.name }}</p>
+            <p>Описание:  {{ obj.description }}</p>
+            <p>Категория:  {{ obj.category }}</p>
+            <p>ID пользователя: {{request.user.id}}</p>
+            <p>
+                <a href="{% url 'obj_edit' obj.id %}">Редактировать</a> /
+                <a href="{% url 'obj_delete' obj.id %}">Удалить</a>
+                <form enctype="multipart/form-data" method="post" action="{% url 'add_pic' obj.id %}" >
+                    {% csrf_token %}
+                    <p>
+                        <input type="file" name="photos" multiple accept="image/*,image/jpeg">
+                        <button type="submit">Добавить фото</button>
+                    </p>
+                </form>
+            </p>
+            <p><a href="{% url 'public_link' obj.id %}">Публичная ссылка</a></p>
+        </td>
+        <td>
+
+        {% for i in pic %}
+            <div>
+                <img src="{{ i.image.url }}" width="300px">
+                <a href="{% url  'photo_delete' i.id %}">Удалить фото</a>
+            </div>
+        {% endfor %}
+        </td>
+    </tr>
+</table>
+{% endblock %}

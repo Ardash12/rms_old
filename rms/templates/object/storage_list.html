@@ -1,0 +1,48 @@
+{% extends "object/default.html" %} 
+{% load mptt_tags %}
+
+{% block title %}Список мест хранения{% endblock %}
+
+{% block content %}
+<style>
+	table{
+	  margin: 0px 0px;
+	  text-align: left;
+	  border: 1px solid rgb(0, 0, 0);
+	  width: 100%;
+	  border-collapse: collapse;
+	}
+	td,th{
+    border: 1px solid rgb(0, 0, 0);
+    padding: 5px;
+	vertical-align: top;
+	}
+
+</style>
+
+{% if storage_list %}
+    <table>
+        <tr>
+            <th>
+                Места хранения
+            </th>
+        </tr>
+    {% for storage in storage_list %}
+        <tr>
+            <td>
+                <p>
+                    <a href="{% url 'storage_detail' storage.id %}"><b>{{storage.name}}</b></a> / 
+                    <a href="{% url 'storage_edit' storage.id %}">Изменить</a> / 
+                    <a href="{% url 'storage_delete' storage.id %}">Удалить</a>
+                </p>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% else %}
+<p>У пользователя <b>{{ request.user.username }}</b> нет мест хранения.</p>
+{% endif %}
+<br>
+<a href="{% url 'storage_create' %}"><b>Добавить место хранения</b></a>
+
+{% endblock %}

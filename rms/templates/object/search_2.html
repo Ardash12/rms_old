@@ -1,0 +1,65 @@
+{% extends "object/default.html" %} 
+
+
+{% block content %}
+<style>
+	table{
+	  margin: 50px 0px;
+	  text-align: left;
+	  border: 1px solid rgb(0, 0, 0);
+	  width: 100%;
+	  border-collapse: collapse;
+	}
+	td,th{
+    border: 1px solid rgb(0, 0, 0);
+    padding: 5px;
+    vertical-align: top;
+  }
+</style>
+<h1>Результаты поиска</h1>
+<table>
+    <tr>
+        <th>
+            Название
+        </th>
+        <th>
+            Дата добавления
+        </th>
+        <th>
+            Категория
+        </th>
+        <th>
+            Пользователь
+        </th>
+        <th>
+            Фото
+        </th>
+    </tr>
+{% for thing in search_result %}
+    <tr>
+        <td>
+            <p>
+            {{thing.name}}
+            </p>
+        </td>
+        <td>
+            {{thing.created|date:'d M Y'}}
+        </td>
+        <td>
+            {{thing.category}}
+        </td>
+        <td>
+            {{thing.owner}}
+        </td>
+        <td>
+            {% for photo in photos %}
+                {% if photo.obj == thing %}
+                    <img src="{{ photo.image.url }}" width="70px">
+                {% endif %}
+            {% endfor %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/assets/css/style3.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Card</title>
+</head>
+<body>
+    <header class="header-newCard">
+        <div class="header-newCard_div">
+        <a href="{% url 'obj_list' %}"><img class="arrows-button" src="/static/assets/images/Arrows_button.svg" alt=""></a>
+          <h1>Карточка вещи</h1>
+        <a href="{% url 'obj_list' %}"><img class="close-button" src="/static/assets/images/Close_button.svg" alt=""></a>
+        </div>
+      </header>
+
+
+    <main>
+        <div class="main__container">
+            <div class="container-card">
+              <ul class="container-card__list">
+                <li class="container-card__list-item4"><h3>{{obj.name}}</h3> </li>
+                <li class="container-card__list-item5">
+                  {% for photo in photos %}
+                    <h3 class="icon1"><img src="{{ photo.image.url }}" width="148px"></h3>
+                  {% endfor %}
+                </li>
+
+                <li class="container-card__list-item1">Категория <h3>{{obj.category}}</h3> </li>
+                <li class="container-card__list-item2">Место хранения<h3>{{obj.storage}}</h3> </li>
+                <li class="container-card__list-item3">Описание <h3>{{obj.description}}</h3> </li>
+              </ul>
+            </div>
+
+            <a href="{% url 'obj_edit' obj.id %}"><button class="main__container-button">Редактировать</button></a>
+            <button class="main__container-button1">Удалить</button>
+          <button class="main__container-button2">Поделиться</button>
+          </div>
+
+          <div class="modal-shering">
+            <div class="modal_main-shering">
+                <input class="shering_input" type="text" name="modal-shering" value="{{public_link}}"> 
+                <img class="shering-frame" src="/static/assets/images/Frame.svg" alt="frame">
+            </div>
+          </div>
+
+          <div class="modal-delete">
+            <div class="modal_main-delete">
+              <h2 class="modal_title-delete">Вы действительно хотите удалить эту вещь?</h2>
+              <form method="POST" action="{% url 'obj_delete' obj.id %}">
+                {% csrf_token %}
+                <button class="modal-delete_button1">Да</button>
+              </form>
+            <button class="modal-delete_button2">Нет</button>
+            </div>
+          </div>
+
+    </main>
+
+    <script src="/static/assets/js/main.js"></script>
+    
+</body>
+</html>

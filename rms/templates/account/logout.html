@@ -1,0 +1,51 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/assets/css/style3.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <title>Authorization</title>
+</head>
+
+<body>
+    <div class="form_container">
+        <div class="gray"></div>
+
+
+
+        <div class="exit-container">
+            
+                <h1 class="exit-container_h1">
+                    Система управления ресурсами
+                </h1>
+                <h2 class="exit-container_h2">Вы точно хотите выйти?</h2>
+
+                <div> 
+                <form method="post" action="{% url 'account_logout' %}">
+                    {% csrf_token %}
+                    {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                    {% endif %}
+                    <button class="button_exit1">Да</button>
+                </form>
+                <button class="button_exit2" onclick="history.back();">Нет</button>
+                </div>
+        </div>
+
+    </div>
+
+
+
+</body>
+</html>
+{% endblock %}

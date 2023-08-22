@@ -1,0 +1,89 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <script defer src="page2.js"></script>
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="form_container">
+        <a href="{% url 'home' %}" class="back_button"><img src="/static/assets/images/Arrows_button.svg" alt="Back button"></a>
+        
+        <div class="login-form">
+            <div class="login-form_profile">
+                <h1 class="login-form_h1">Войти в профиль</h1>
+                <form id="form" class= "login-form_profile_input" method="POST">
+                  {% csrf_token %}
+                  {{ form.name_of_field.errors }}
+                  
+                  
+                    <div class="input-control input-control_wrp">
+                        <input id="id_email" class="input_style" type="email" name="login" autocomplete="email" required="">
+                        <span class="floating-label">E-mail</span>
+                        <div class="error" id="error_m">{{ form.email.errors }}</div>
+                    </div>
+                    <div class="input-control input-control_wrp">
+                        <input id="id_password" class="input_style" type="password" name="password" autocomplete="current-password" required="">
+                        <span class="floating-label">Пароль</span>
+                        <div class="error" id="error_m">
+                          {{ form.password.errors }}
+                          {% for error in form.non_field_errors %}
+                            {{error}}
+                          {% endfor %}
+                        </div>
+                    </div>
+                    <input type="checkbox" id="id_remember">
+                    <label for="checkbox">Запомнить меня</label>
+                    {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
+                    <button type="submit" class="b1">Продолжить</button>
+                </form>
+
+            </div>
+        </div>
+        <div class="form-middle">
+          <div class="form-middle_line1"></div>
+          <p id="form-middle_text">Или</p>
+          <div class="form-middle_line2"></div>
+      </div>
+              
+      <div class="login-form">
+          <div class="login-form_social">
+              <h1 class="login-form_h1">Войти с помощью</h1>
+              <a href="/accounts/google/login/?process=login">
+                <button class="login-form_social_googlebutton">Google</button>
+              </a>
+              <a href="/accounts/yandex/login/?process=login">
+                <button class="login-form_social_fbbutton">Вконтакте</button>
+              </a>
+              <a href="/accounts/vk/login/?process=login">
+                <button class="login-form_social_applebutton">Яндекс</button>
+              </a>
+              <a href="{% url 'account_signup' %}"><h2 class="login-form_social_h2">Еще не зарегистрированы?</h2></a>
+          </div>
+      </div>
+  </div>
+
+
+
+
+</body>
+
+</html>
+{% endblock %}

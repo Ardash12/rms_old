@@ -1,0 +1,15 @@
+{% extends "object/default.html" %} 
+
+{% block title %}
+    Удаление {{object}}
+{% endblock title %}
+
+{% block content %}
+<p>Вы действительно хотите удалить {{object}}</p>
+
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Подтвердить">
+</form>
+{% endblock content %}

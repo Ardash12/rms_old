@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/assets/css/style2.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Добавить вещь</title>
+</head>
+<body>
+    <header class="header-newCard">
+      <div class="header-newCard_div">
+      <a href="{% url 'obj_list' %}"><img class="arrows-button" src="/static/assets/images/Arrows_button.svg" alt=""></a>
+        <h1>Добавить вещь</h1>
+      <a href="{% url 'obj_list' %}"><img class="close-button" src="/static/assets/images/Close_button.svg" alt=""></a>
+      </div>
+
+    </header>
+    <main>
+        <div class="container">
+            <div class="container-form">
+                <form method="POST" id="form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="container-form_name">
+                        <label for="id_name">Наименование *</label>
+                        <input class="input-name"  type="text" id="id_name" name="name" placeholder="Введите наименование">
+                    </div>
+                    <div class="container-form_category">
+                        <label for="Category">Категория</label>
+                        <div class="form-group-three">
+                            <div class="select-wrapper-three">
+                                <select class="dropdown__button-three" name="category" required id="id_category">
+                                    {% for cat in form.category %}
+                                        {{cat}}
+                                    {% endfor %}
+                                </select>
+                            </div>  
+                        </div>
+                    </div>
+
+                    <div class="container-form_place">
+                        <label for="last-name">Место хранения</label>
+                          <div class="form-group-four">
+                            <div class="select-wrapper-four">
+                                <select class="dropdown__button-four" name="storage" required id="id_storage">
+                                    {% for stor in form.storage %}
+                                        {{stor}}
+                                    {% endfor %}
+                                </select>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="container-form_description">
+                    <label for="id_description">Описание</label>
+                    <div class="textarea-description">
+                        <input class="input-description"  type="text" id="id_description" name="description" placeholder="Описание">
+                    </div>
+                    
+                    </div>
+
+                    <div class="container-form_photo">
+                        <label>Фотографии * </label>
+                        <label class="volumeFoto">Не более 5</label>
+                        
+                        <label class="upload-icon" for="id_photos">
+                            <img id="foto"src="/static/assets/images/image_choose.svg" alt="image upload">
+                        </label>  
+                        <input type="file" name="photos" multiple="multiple" accept="image/*" id="id_photos">
+                    </div>
+
+                    <div class="container-form_button">
+                        <button class="button_send"  type="submit">Сохранить</button>
+                    </div>
+                </form>
+                    <div class="container-form_button-delete">
+                        
+                            <button class="button_send-delete"  type="submit">Добавить новое место хранения</button>
+                        
+                    </div>
+            </div>
+          </div>
+          </div>
+          
+          <div class="modal-category">
+            <div class="modal_main-category">
+
+              <h2 class="modal_title-category">Добавить новое место хранения</h2>
+              <form action="{%url 'storage_create'%}" method="post">
+                {% csrf_token %}
+                <input class="modal_input" id="id_name" type="text" name="name" placeholder="Название" required>
+                <button class="modal-category_button2">Готово</button>
+              </form>
+              <button class="modal-category_button1">Отмена</button>
+            </div>
+          </div>
+    </main>
+
+    <script src="/static/assets/js/main2.js"></script>
+
+
+</body>
+</html>
